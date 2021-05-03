@@ -1,10 +1,11 @@
 # mmpx-rs
 
-This is a Rust implementation of the
+This is a Rust version of the
 [MMPX image magnifying algorithm](https://casual-effects.com/research/McGuire2021PixelArt/index.html)
 as presented by Morgan McGuire and Mara Gagiu.
 
-All rights to this algorithm belong to the authors.
+All rights to this algorithm belong to the authors,
+and their choice of the MIT license applies to this implementation as well (see LICENSE.md).
 
 ## algorithm
 
@@ -51,13 +52,11 @@ let output: RgbaImage = mmpx::magnify(&image);
 This implementation uses Rust for memory safety and the
 [rayon](https://github.com/rayon-rs/rayon)
 crate to process pixels in parallel.
-The only place where the actual processing logic intentionally differs from the one offered by the authors
-is in calculation of the luma for a given pixel.
+The only processing logic that intentionally differs from the C++ version offered by the authors
+is in the calculation of luma for a given pixel (a minor effect, if any).
 
-Performance seems similar to the single threaded c++ implementation, making this potentially usable
-for realtime rendering.
-
-Performance testing has been minimal and improvements could come from using a dry image buffer
+Performance seems similar to the single threaded C++ implementation, making this potentially usable
+for realtime rendering. Testing has been minimal and improvements could come from using a dry image buffer
 like the c++ version instead of the
 [image](https://github.com/image-rs/image)
 crate's `ImageBuffer`.
