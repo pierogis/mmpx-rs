@@ -1,5 +1,7 @@
 # mmpx-rs
 
+[![Crates.io](https://img.shields.io/crates/v/mmpx.svg)](https://crates.io/crates/mmpx)
+
 This is a Rust version of the
 [MMPX image magnifying algorithm](https://casual-effects.com/research/McGuire2021PixelArt/index.html)
 as presented by Morgan McGuire and Mara Gagiu.
